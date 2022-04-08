@@ -8,6 +8,7 @@ function App() {
       <div className="Box">
         <Weather />
       </div>
+      <p><a href="https://github.com/katzybura/weather-app-react">Open Source Code</a> by Katherine Zybura.</p>
     </div>
   );
 }
