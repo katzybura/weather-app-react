@@ -14,7 +14,7 @@ export default function Main() {
           <img
             src="http://openweathermap.org/img/wn/10d@2x.png"
             width="100px"
-            className="CurrentEmoji"
+            className="CurrentEmoji" alt="weather emoji"
           />
         </div>
       </div>
