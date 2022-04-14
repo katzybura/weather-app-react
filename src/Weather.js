@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Date from "./FormattedDate";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./styles.css";
 
