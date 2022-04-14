@@ -4,9 +4,9 @@ import axios from "axios";
 import "./styles.css";
 
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData]= useState({ready: false});
-  const [city, setCity]= useState(props.defaultCity)
+  const [city, setCity]= useState(props.defaultCity);
 
   function handleResponse(response){
     console.log(response.data);
