@@ -1,33 +1,34 @@
 import React, {useState} from "react";
-import Date from "./Date";
+import Date from "./FormattedDate";
 import axios from "axios";
 import "./styles.css";
 
 
 export default function Weather() {
-  const [ready, setReady]= useState(false);
-  const [weatherData, setWeatherData]= useState({});
+  const [weatherData, setWeatherData]= useState({ready: false});
 
   function handleResponse(response){
     console.log(response.data);
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon
+      icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000)
  });
-    setReady(true);
+    
   }
-  if (ready){
+  if (weatherData.ready){
       return (
     <div className="Weather">
      <form>
       <input type="search" className="SearchBox" />{" "}
       <input type="submit" value="Search" className="Button" />
     </form>
-      <Date />
+      <FormattedDate date={weatherData.date}/>
      <div className="row">
      <div className="col-6">
        <h1>{weatherData.city}</h1>
