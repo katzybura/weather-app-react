@@ -6,6 +6,7 @@ import "./styles.css";
 
 export default function Weather() {
   const [weatherData, setWeatherData]= useState({ready: false});
+  const [city, setCity]= useState(props.defaultCity)
 
   function handleResponse(response){
     console.log(response.data);
@@ -21,21 +22,32 @@ export default function Weather() {
  });
     
   }
+
+  function search(){
+    let apiKey="d5051b82a85f7e540a240206a4a2fed4";
+  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event){
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event){
+setCity(event.target.value);
+  }
   if (weatherData.ready){
       return (
     <div className="Weather">
-     <form>
-      <input type="search" className="SearchBox" />{" "}
+     <form onSubmit={handleSubmit}>
+      <input type="search" className="SearchBox" onChange={handleCityChange}/>{" "}
       <input type="submit" value="Search" className="Button" />
     </form>
     <WeatherInfo data={weatherData}/>
       
    </div>
   );
-  } else{ let apiKey="d5051b82a85f7e540a240206a4a2fed4";
-  let city="New York";
-  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+  } else{ 
+    search();
 return "Loading";
 }
 }
