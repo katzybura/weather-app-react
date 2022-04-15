@@ -9,7 +9,7 @@ function App() {
       <div className="Box">
         <Weather defaultCity="New York" />
       </div>
-      <p><a href="https://github.com/katzybura/weather-app-react" target="_blank">Open Source Code</a> by Katherine Zybura.</p>
+      <p><a href="https://github.com/katzybura/weather-app-react" target="_blank" rel="noreferrer">Open Source Code</a> by Katherine Zybura.</p>
     </div>
   );
 }
