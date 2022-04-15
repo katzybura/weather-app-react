@@ -19,7 +19,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt * 1000)
+      date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord
  });
     
   }
@@ -44,7 +45,7 @@ setCity(event.target.value);
       <input type="submit" value="Search" className="Button" />
     </form>
     <WeatherInfo data={weatherData}/>
-    <WeatherForecast />  
+    <WeatherForecast coordinates={weatherData.coordinates}/>  
    </div>
   );
   } else{ 
