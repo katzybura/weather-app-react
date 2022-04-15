@@ -36,7 +36,7 @@ li {
   text-align: center;
   list-style: none;
 }
-.CurrentEmoji {
+.CurrentEmoji canvas {
   display: block;
   margin: 0 auto;
 }

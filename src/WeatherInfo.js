@@ -1,6 +1,8 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
+import "./styles.css";
 
 export default function WeatherInfo(props){
     return(
@@ -11,12 +13,8 @@ export default function WeatherInfo(props){
       <h1>{props.data.city}</h1>
       <WeatherTemperature celsius={props.data.temperature} />
       <h3 id="Conditions" className="text-capitalize">{props.data.description}</h3>
-      <div>
-        <img
-           src={`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
-          width="100px"
-          className="CurrentEmoji" alt="weather emoji"
-        />
+      <div className="CurrentEmoji">
+        <WeatherIcon code={props.data.icon} />
       </div>
     </div>
     <div className="col-6">
