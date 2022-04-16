@@ -1,6 +1,6 @@
 
 .Box {
-  background: linear-gradient(180deg, #e1f6f4 0%, #bfe9db 100%);
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   padding: 50px;
   margin: 50px auto 0;
   border-radius: 5px;
@@ -12,7 +12,7 @@ form {
 .Button {
   border-radius: 15px;
   border: none;
-  background-color: #6ac1b8;
+  background-color: #7694bf;
   padding: 5px 20px;
   color: white;
   transition: all 200ms ease-in-out;
@@ -22,7 +22,7 @@ form {
 }
 .SearchBox {
   border-radius: 15px;
-  border: 2px solid #6ac1b8;
+  border: 2px solid #7694bf;
   padding: 3px 20px;
 }
 h1 {

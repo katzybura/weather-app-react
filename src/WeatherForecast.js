@@ -42,7 +42,7 @@ setLoaded(true);
     let apiKey="412b9e2225d563af1e9c2cad1fcab93c";
     let longitude= props.coordinates.lon;
     let latitude= props.coordinates.lat;
-    let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+    let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
    axios.get(apiUrl).then(handleResponse);
 
    return null;
