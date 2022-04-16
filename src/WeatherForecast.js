@@ -18,6 +18,18 @@ setLoaded(true);
                     <div className="col">
                       <WeatherForecastDay data={forecast[0]} />
                     </div>
+                    <div className="col">
+                      <WeatherForecastDay data={forecast[1]} />
+                    </div>
+                    <div className="col">
+                      <WeatherForecastDay data={forecast[2]} />
+                    </div>
+                    <div className="col">
+                      <WeatherForecastDay data={forecast[3]} />
+                    </div>
+                    <div className="col">
+                      <WeatherForecastDay data={forecast[4]} />
+                    </div>
                     </div>
                     </div>
                 );
